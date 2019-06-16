@@ -11,7 +11,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
-        },
+    },
     plugins: [
         new MiniCssExtractPlugin({
             filename: devMode ? '[name].css' : '[name].[hash].css',
