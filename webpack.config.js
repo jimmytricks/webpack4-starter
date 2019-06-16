@@ -10,9 +10,8 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-        publicPath: "/dist"
-    },
+        path: path.resolve(__dirname, 'dist')
+        },
     plugins: [
         new MiniCssExtractPlugin({
             filename: devMode ? '[name].css' : '[name].[hash].css',
@@ -22,18 +21,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(sa|sc|c)ss$/,
+                test: /\.scss$/,
                 use: [
-                  {
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
-                      hmr: process.env.NODE_ENV === 'development',
-                    },
-                  },
-                  'css-loader',
-                  'sass-loader',
-                ],
-              },
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader',
+                ]
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
