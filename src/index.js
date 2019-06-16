@@ -1,3 +1,5 @@
 import './style.scss';
 
-conole.log('Ready');
+console.log('test');
+
+document.getElementById('test').classList.add('testbold');
